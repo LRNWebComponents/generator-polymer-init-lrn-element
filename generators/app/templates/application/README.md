@@ -2,19 +2,19 @@
 ```
 <custom-element-demo>
   <template>
-    <link rel="import" href="boiler-plate.html">
+    <link rel="import" href="<%= name %>.html">
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
 ```
 -->
 ```html
-<boiler-plate></boiler-plate>
+<<%= name %>></<%= name %>>
 ```
 
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/LRNWebComponents/boiler-plate)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/LRNWebComponents/<%= name %>)
 
-# \<boiler-plate\>
+# \<<%= name %>\>
 
 An LRN application
 

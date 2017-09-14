@@ -1,6 +1,6 @@
 {
-  "name": "boiler-plate-app",
-  "short_name": "boiler-plate-app",
+  "name": "<%= name %>",
+  "short_name": "<%= name %>",
   "title": "New app",
   "description": "A new app",
   "start_url": "/",

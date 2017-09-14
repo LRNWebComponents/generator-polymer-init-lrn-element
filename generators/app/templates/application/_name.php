@@ -1,8 +1,8 @@
 <?php
 /**
- * Callback for apps/boiler-plate-app/data.
+ * Callback for apps/<%= name %>/data.
  */
-function _boiler_plate_app_data($machine_name, $app_route, $params, $args) {
+function _<%= underscoreName %>_data($machine_name, $app_route, $params, $args) {
   $return = array();
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')

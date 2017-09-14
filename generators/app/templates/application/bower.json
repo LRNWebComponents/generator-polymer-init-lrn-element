@@ -1,7 +1,7 @@
 {
-  "name": "boiler-plate-app",
+  "name": "<%= name %>",
   "description": "A LRN app",
-  "main": "boiler-plate-app.html",
+  "main": "<%= name %>.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.9.1",
     "build": "LRNWebComponents/build#^0.1.4"

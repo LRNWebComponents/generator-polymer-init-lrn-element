@@ -5,12 +5,8 @@ const yosay = require('yosay');
 
 module.exports = class extends Generator {
   prompting() {
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the revolution... LRN Web Components.'
-    ));
-
-    const prompts = [{
+    const prompts = [
+      {
       type: 'list',
       choices: ['element', 'application'],
       name: 'componentType',
@@ -22,17 +18,17 @@ module.exports = class extends Generator {
       message: 'What would you like to name this component?',
       default: this.appname.replace(' ', '-')
     }
-  ];
+    ];
 
     return this.prompt(prompts).then(props => {
       // To access props later use this.props.someAnswer;
+      props = Object.assign(props, { underscoreName: props.name.replace('-', '_') });
       this.props = props;
     });
   }
 
   writing() {
     var templatePath = this.templatePath() + '/' + this.props.componentType;
-    console.log(templatePath);
 
     // copy over all files but the dynamic ones
     this.fs.copyTpl(
@@ -50,6 +46,18 @@ module.exports = class extends Generator {
       this.fs.copyTpl(
         `${templatePath}/test/_component-name-test.html`,
         this.destinationPath(`test/${this.props.name}.html`),
+        this.props
+      );
+    }
+    else if (this.props.componentType === 'application') {
+      this.fs.copyTpl(
+        `${templatePath}/_name.php`,
+        this.destinationPath(`${this.props.name}.php`),
+        this.props
+      );
+      this.fs.copyTpl(
+        `${templatePath}/src/_name/_name.html`,
+        this.destinationPath(`src/${this.props.name}/${this.props.name}.html`),
         this.props
       );
     }
