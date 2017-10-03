@@ -1,0 +1,10 @@
+{
+  "name": "<%= name %>",
+  "scripts": {
+    "lrn-dedup": "node bower-postinstall.js"
+  },
+  "devDependencies": {
+    "glob": "^7.1.2",
+    "replace-in-file": "^2.6.2"
+  }
+}
