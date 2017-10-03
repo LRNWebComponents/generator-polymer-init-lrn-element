@@ -2,11 +2,11 @@
 
 ## Installation
 
-Clone this repo
 ```bash
-git clone
-npm install
-npm link
+npm install -g yo
+npm install -g bower
+npm install -g polymer-cli
+npm install -g @lrn/generator-polymer-init-lrn-element
 ```
 
 Make the folder for your element
@@ -19,7 +19,7 @@ cd my-element
 Create the element with polymer init and choose the LRN option
 
 ```bash
-polymer init
+yo @lrn/generator-polymer-init-lrn-element
   - LRN component
     - element
 ```
